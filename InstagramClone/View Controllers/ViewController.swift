@@ -27,12 +27,6 @@ class ViewController: UIViewController {
         
         
         
-        
-        
-        
-        
-        
-        
         let flowLayout = UICollectionViewFlowLayout()
         
         flowLayout.minimumInteritemSpacing = 10

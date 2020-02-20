@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F9C611223FD2FAB00ABFA70 /* EmailSignUpPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C611123FD2FAB00ABFA70 /* EmailSignUpPasswordView.swift */; };
+		2F9C611423FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C611323FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift */; };
+		2F9C611623FE78B200ABFA70 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C611523FE78B200ABFA70 /* UserModel.swift */; };
+		2F9C611823FE87EA00ABFA70 /* SupportingFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C611723FE87EA00ABFA70 /* SupportingFile.swift */; };
 		550A07F323DED0FF00957FD9 /* FeedItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550A07F223DED0FF00957FD9 /* FeedItemModel.swift */; };
 		5565310D23E2CF0000E97E0D /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5565310C23E2CD3300E97E0D /* Billabong.ttf */; };
 		5565310E23E2CF3200E97E0D /* Billabong.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 5565310C23E2CD3300E97E0D /* Billabong.ttf */; };
 		5568A8ED23E2AAC500016465 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568A8EC23E2AAC500016465 /* LoginViewController.swift */; };
 		5568A8EF23E2AAE500016465 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568A8EE23E2AAE500016465 /* LoginView.swift */; };
+		557BEA1523F143CE009DF611 /* countryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 557BEA1423F143CE009DF611 /* countryCodes.json */; };
+		557BEA1723F144A4009DF611 /* CountryCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557BEA1623F144A4009DF611 /* CountryCodeView.swift */; };
+		557BEA1A23F14E61009DF611 /* CountryCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557BEA1923F14E61009DF611 /* CountryCodeViewModel.swift */; };
+		557BEA1C23F14E7F009DF611 /* CountryCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557BEA1B23F14E7F009DF611 /* CountryCodeModel.swift */; };
 		55883E3F23E150AF00778CEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55883E3E23E150AF00778CEC /* GoogleService-Info.plist */; };
 		55A2181623DAFE7800588D8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2181523DAFE7800588D8F /* AppDelegate.swift */; };
 		55A2181823DAFE7800588D8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2181723DAFE7800588D8F /* SceneDelegate.swift */; };
@@ -22,15 +30,25 @@
 		55A2182B23DB004700588D8F /* FeedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2182A23DB004700588D8F /* FeedItemView.swift */; };
 		55D6A51D23E97E33006C66AC /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6A51C23E97E33006C66AC /* SignUpView.swift */; };
 		55D6A51F23E9827D006C66AC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6A51E23E9827D006C66AC /* SignUpViewController.swift */; };
+		55D6A52123EA965E006C66AC /* SignUpOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6A52023EA965E006C66AC /* SignUpOptionsView.swift */; };
+		55D6A52323EA96A3006C66AC /* SignUpOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D6A52223EA96A3006C66AC /* SignUpOptionsViewController.swift */; };
 		F27ADDB8FE9555FA41A3ACE2 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9279FE7F0CC89BD364024447 /* Pods_InstagramClone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2AE90B37A9D452405454C45E /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
+		2F9C611123FD2FAB00ABFA70 /* EmailSignUpPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpPasswordView.swift; sourceTree = "<group>"; };
+		2F9C611323FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpPasswordViewController.swift; sourceTree = "<group>"; };
+		2F9C611523FE78B200ABFA70 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		2F9C611723FE87EA00ABFA70 /* SupportingFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingFile.swift; sourceTree = "<group>"; };
 		550A07F223DED0FF00957FD9 /* FeedItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemModel.swift; sourceTree = "<group>"; };
 		5565310C23E2CD3300E97E0D /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
 		5568A8EC23E2AAC500016465 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5568A8EE23E2AAE500016465 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		557BEA1423F143CE009DF611 /* countryCodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countryCodes.json; sourceTree = "<group>"; };
+		557BEA1623F144A4009DF611 /* CountryCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeView.swift; sourceTree = "<group>"; };
+		557BEA1923F14E61009DF611 /* CountryCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeViewModel.swift; sourceTree = "<group>"; };
+		557BEA1B23F14E7F009DF611 /* CountryCodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeModel.swift; sourceTree = "<group>"; };
 		55883E3E23E150AF00778CEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		55A2181223DAFE7800588D8F /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A2181523DAFE7800588D8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +61,8 @@
 		55A2182A23DB004700588D8F /* FeedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemView.swift; sourceTree = "<group>"; };
 		55D6A51C23E97E33006C66AC /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		55D6A51E23E9827D006C66AC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		55D6A52023EA965E006C66AC /* SignUpOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpOptionsView.swift; sourceTree = "<group>"; };
+		55D6A52223EA96A3006C66AC /* SignUpOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpOptionsViewController.swift; sourceTree = "<group>"; };
 		9279FE7F0CC89BD364024447 /* Pods_InstagramClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBCCAD32A6F0472947B6AAF /* Pods-InstagramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.debug.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,12 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5565310B23E2CD2700E97E0D /* Font */ = {
+		5565310B23E2CD2700E97E0D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				557BEA1423F143CE009DF611 /* countryCodes.json */,
 				5565310C23E2CD3300E97E0D /* Billabong.ttf */,
+				2F9C611723FE87EA00ABFA70 /* SupportingFile.swift */,
 			);
-			path = Font;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		5568A8EB23E2AA9400016465 /* View Controllers */ = {
@@ -73,8 +95,27 @@
 				55A2181923DAFE7800588D8F /* ViewController.swift */,
 				5568A8EC23E2AAC500016465 /* LoginViewController.swift */,
 				55D6A51E23E9827D006C66AC /* SignUpViewController.swift */,
+				55D6A52223EA96A3006C66AC /* SignUpOptionsViewController.swift */,
+				2F9C611323FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		557BEA1823F14E38009DF611 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				557BEA1923F14E61009DF611 /* CountryCodeViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		557BEA1E23F14E94009DF611 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				557BEA1B23F14E7F009DF611 /* CountryCodeModel.swift */,
+				2F9C611523FE78B200ABFA70 /* UserModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		55A2180923DAFE7800588D8F = {
@@ -98,7 +139,9 @@
 		55A2181423DAFE7800588D8F /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
-				5565310B23E2CD2700E97E0D /* Font */,
+				5565310B23E2CD2700E97E0D /* Resources */,
+				557BEA1E23F14E94009DF611 /* Models */,
+				557BEA1823F14E38009DF611 /* View Models */,
 				5568A8EB23E2AA9400016465 /* View Controllers */,
 				55A2182923DB000100588D8F /* View */,
 				55A2181523DAFE7800588D8F /* AppDelegate.swift */,
@@ -119,6 +162,9 @@
 				55A2182A23DB004700588D8F /* FeedItemView.swift */,
 				5568A8EE23E2AAE500016465 /* LoginView.swift */,
 				55D6A51C23E97E33006C66AC /* SignUpView.swift */,
+				55D6A52023EA965E006C66AC /* SignUpOptionsView.swift */,
+				557BEA1623F144A4009DF611 /* CountryCodeView.swift */,
+				2F9C611123FD2FAB00ABFA70 /* EmailSignUpPasswordView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +249,7 @@
 				5565310D23E2CF0000E97E0D /* Billabong.ttf in Resources */,
 				55A2182223DAFE7900588D8F /* LaunchScreen.storyboard in Resources */,
 				55883E3F23E150AF00778CEC /* GoogleService-Info.plist in Resources */,
+				557BEA1523F143CE009DF611 /* countryCodes.json in Resources */,
 				55A2181F23DAFE7900588D8F /* Assets.xcassets in Resources */,
 				55A2181D23DAFE7800588D8F /* Main.storyboard in Resources */,
 			);
@@ -259,13 +306,22 @@
 			files = (
 				5565310E23E2CF3200E97E0D /* Billabong.ttf in Sources */,
 				5568A8ED23E2AAC500016465 /* LoginViewController.swift in Sources */,
+				55D6A52123EA965E006C66AC /* SignUpOptionsView.swift in Sources */,
 				5568A8EF23E2AAE500016465 /* LoginView.swift in Sources */,
+				2F9C611223FD2FAB00ABFA70 /* EmailSignUpPasswordView.swift in Sources */,
+				557BEA1A23F14E61009DF611 /* CountryCodeViewModel.swift in Sources */,
+				2F9C611823FE87EA00ABFA70 /* SupportingFile.swift in Sources */,
+				2F9C611423FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift in Sources */,
+				557BEA1723F144A4009DF611 /* CountryCodeView.swift in Sources */,
+				557BEA1C23F14E7F009DF611 /* CountryCodeModel.swift in Sources */,
 				55A2181A23DAFE7800588D8F /* ViewController.swift in Sources */,
 				55D6A51F23E9827D006C66AC /* SignUpViewController.swift in Sources */,
 				550A07F323DED0FF00957FD9 /* FeedItemModel.swift in Sources */,
+				55D6A52323EA96A3006C66AC /* SignUpOptionsViewController.swift in Sources */,
 				55A2181623DAFE7800588D8F /* AppDelegate.swift in Sources */,
 				55A2181823DAFE7800588D8F /* SceneDelegate.swift in Sources */,
 				55D6A51D23E97E33006C66AC /* SignUpView.swift in Sources */,
+				2F9C611623FE78B200ABFA70 /* UserModel.swift in Sources */,
 				55A2182B23DB004700588D8F /* FeedItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,7 +477,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kushalmukherjee.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -440,7 +496,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kushalmukherjee.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

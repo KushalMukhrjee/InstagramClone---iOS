@@ -12,8 +12,6 @@ class SignUpViewController: UIViewController {
     
     var signUpView: SignUpView!
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,14 +23,25 @@ class SignUpViewController: UIViewController {
         signUpView.translatesAutoresizingMaskIntoConstraints = false
         
         signUpView.pinToEdges(of: self.view, toSafeArea: true)
+        
+        signUpView.logInButton.addTarget(self, action: #selector(logInButtonClicked(sender:)), for: .touchUpInside)
+        signUpView.signupWithEmailOrPhoneNumberButton.addTarget(self, action: #selector(signUpWithPhoneOrEmailButtonClicked(sender:)), for: .touchUpInside)
 
         // Do any additional setup after loading the view.
     }
     
     override func viewDidLayoutSubviews() {
-        
         signUpView.updateConstraints()
     }
     
-
+    @objc func logInButtonClicked(sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func signUpWithPhoneOrEmailButtonClicked(sender: UIButton) {
+        
+        let signUpOptionsVC = SignUpOptionsViewController()
+        present(signUpOptionsVC, animated: true, completion: nil)
+        
+    }
 }

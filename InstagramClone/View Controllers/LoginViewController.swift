@@ -21,10 +21,9 @@ class LoginViewController: UIViewController {
         
         loginView.pinToEdges(of: self.view, toSafeArea: true)
         
+        loginView.logInButton.addTarget(self, action: #selector(loginButtonPressed(sender:)), for: .touchUpInside)
         
         loginView.signUpButton.addTarget(self, action: #selector(signUpButtonPressed(sender:)), for: .touchUpInside)
-        
-
         
         // Do any additional setup after loading the view.
     }
@@ -35,10 +34,29 @@ class LoginViewController: UIViewController {
         loginView.updateConstraints()
     }
     
+    @objc func loginButtonPressed(sender: UIButton) {
+        
+        signInUser(emailId: loginView.userNameTextField.text!, password: loginView.passwordTextField.text!) { [weak self](authResult, err) in
+            if err != nil {
+                print(err?.localizedDescription)
+            } else {
+                
+                let vc = ViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self?.present(vc, animated: true, completion: nil)
+            }
+        }
+        
+        
+        
+    }
     
     @objc func signUpButtonPressed(sender: UIButton) {
         
-        present(SignUpViewController(), animated: true, completion: nil)
+        let signUpVc = SignUpViewController()
+        signUpVc.modalPresentationStyle = .fullScreen
+        
+        present(signUpVc, animated: true, completion: nil)
         
     }
     
@@ -69,6 +87,20 @@ extension UIView {
                 self.trailingAnchor.constraint(equalTo: superView.trailingAnchor)
             ])
         }
+    }
+    
+    func pinToCenter(of superView: UIView) {
+        
+        
+        NSLayoutConstraint.activate([
+            
+            
+            self.centerXAnchor.constraint(equalTo: superView.centerXAnchor),
+            self.centerYAnchor.constraint(equalTo: superView.centerYAnchor)
+        
+        
+        ])
+        
     }
 
 }

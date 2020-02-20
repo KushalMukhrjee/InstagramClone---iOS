@@ -8,6 +8,8 @@
 
 import UIKit
 
+//The first sign up view
+
 class SignUpView: UIView {
     
     var topContainer: UIView!

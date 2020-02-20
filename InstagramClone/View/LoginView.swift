@@ -8,6 +8,8 @@
 
 import UIKit
 
+//Contains all elements for Login page
+
 class LoginView: UIView {
     
     
@@ -55,24 +57,16 @@ class LoginView: UIView {
         userNameTextField = UITextField()
         userNameTextField.translatesAutoresizingMaskIntoConstraints = false
         userNameTextField.placeholder = "Phone number, username, or email"
-        userNameTextField.layer.cornerRadius = 5
-        userNameTextField.layer.borderColor = UIColor.gray.cgColor
-        userNameTextField.layer.borderWidth = 1
-        userNameTextField.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
-        userNameTextField.setLeftPaddingPoints(10)
-        userNameTextField.setRightPaddingPoints(10)
+        userNameTextField.borderStyle = .roundedRect
+        userNameTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: [.valueChanged, .allEditingEvents])
         
         
         passwordTextField = UITextField()
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.placeholder = "Password"
-        passwordTextField.layer.cornerRadius = 5
-        passwordTextField.layer.borderColor = UIColor.gray.cgColor
-        passwordTextField.layer.borderWidth = 1
-        passwordTextField.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        passwordTextField.setLeftPaddingPoints(10)
-        passwordTextField.setRightPaddingPoints(10)
+        passwordTextField.borderStyle = .roundedRect
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: [.valueChanged, .allEditingEvents])
         
         logInButton = UIButton(type: .system)
         logInButton.setTitle("Log in", for: .normal)
@@ -81,6 +75,8 @@ class LoginView: UIView {
         logInButton.backgroundColor = #colorLiteral(red: 0.09019607843, green: 0.4705882353, blue: 0.9490196078, alpha: 1)
         logInButton.setTitleColor(.white, for: .normal)
         logInButton.layer.cornerRadius = 5
+        logInButton.alpha = 0.3
+        logInButton.isEnabled = false
         
         seperatorViewOne = UIView()
         seperatorViewOne.translatesAutoresizingMaskIntoConstraints = false
@@ -266,6 +262,22 @@ class LoginView: UIView {
         layoutConstraintsTopContainerElements()
         layoutConstraintsBottomContainerElements()
                 
+    }
+    
+    @objc func textFieldDidChange(sender: UITextField) {
+        
+        if userNameTextField.text!.isEmpty || passwordTextField.text!.isEmpty {
+            logInButton.alpha = 0.3
+            logInButton.isEnabled = false
+            
+        } else {
+            
+            logInButton.alpha = 1
+            logInButton.isEnabled = true
+            
+        }
+        
+        
     }
     
     

@@ -173,14 +173,7 @@ extension UIImageView {
                 self.image = UIImage(data: imgData)
             }
             
-            
-            
         }.resume()
-        
-        
-        
-        
-        
         
     }
     
