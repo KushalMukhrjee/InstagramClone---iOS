@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import Firebase
+import FBSDKLoginKit
+import FBSDKCoreKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
     var loginView: LoginView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +30,8 @@ class LoginViewController: UIViewController {
         
         loginView.signUpButton.addTarget(self, action: #selector(signUpButtonPressed(sender:)), for: .touchUpInside)
         
+        loginView.loginWithFacebookButton.addTarget(self, action: #selector(facebookLogin(sender:)), for: .touchUpInside)
+      
         // Do any additional setup after loading the view.
     }
     
@@ -36,15 +43,35 @@ class LoginViewController: UIViewController {
     
     @objc func loginButtonPressed(sender: UIButton) {
         
+        loginView.logInActivityIndicator.startSpinning()
         signInUser(emailId: loginView.userNameTextField.text!, password: loginView.passwordTextField.text!) { [weak self](authResult, err) in
             if err != nil {
-                print(err?.localizedDescription)
+                
+                if let err = err as NSError? {
+                    switch err.code {
+                    case AuthErrorCode.wrongPassword.rawValue:
+                        
+                        showModalAlert(on: self!, title: "Incorrect password", message: "The password you entered is incorrect. Please try again.", buttonTitlesWithAction: [:], completion: nil)
+                        
+                        
+                        
+                    case AuthErrorCode.userNotFound.rawValue, AuthErrorCode.invalidEmail.rawValue:
+                        
+                        showModalAlert(on: self!, title: "Incorrect Username", message: "The username you entered doesn't appear to belong to an account. Please check your username and try again.", buttonTitlesWithAction: [:], completion: nil)
+                        
+                    default:
+                        print(err.localizedDescription)
+                    }
+                }
+                
             } else {
                 
                 let vc = ViewController()
                 vc.modalPresentationStyle = .fullScreen
                 self?.present(vc, animated: true, completion: nil)
             }
+            self!.loginView.logInActivityIndicator.stopSpinning(buttonTitle: "Log in")
+            
         }
         
         
@@ -58,6 +85,42 @@ class LoginViewController: UIViewController {
         
         present(signUpVc, animated: true, completion: nil)
         
+    }
+    
+    @objc func facebookLogin(sender: UIButton) {
+        
+        let fbLoginManager = LoginManager()
+        
+        fbLoginManager.logIn(permissions: [], from: self) { (result, err) in
+            
+            if err != nil {
+                print(err?.localizedDescription as Any)
+            } else {
+                
+                guard let result = result else {return}
+                
+                if !result.isCancelled {
+                    loginWithFacebook(withAccessToken: AccessToken.current!.tokenString) { (authDataResult, err) -> (Void) in
+                        if err != nil {
+                            print(err?.localizedDescription as Any)
+                        } else {
+                            
+                            let vc = ViewController()
+                            vc.modalPresentationStyle = .fullScreen
+                            self.present(vc, animated: true, completion: nil)
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     
@@ -105,16 +168,5 @@ extension UIView {
 
 }
 
-extension UITextField {
-    
-    func setLeftPaddingPoints(_ amount:CGFloat){
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.leftView = paddingView
-        self.leftViewMode = .always
-    }
-    func setRightPaddingPoints(_ amount:CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.rightView = paddingView
-        self.rightViewMode = .always
-    }
-}
+
+

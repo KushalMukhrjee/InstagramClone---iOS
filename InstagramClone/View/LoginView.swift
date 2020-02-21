@@ -23,6 +23,7 @@ class LoginView: UIView {
     var userNameTextField: UITextField!
     var passwordTextField: UITextField!
     var logInButton: UIButton!
+    var logInActivityIndicator: UIActivityIndicatorView!
     var seperatorStackView: UIStackView!
     var seperatorViewOne: UIView!
     var seperatorViewTwo: UIView!
@@ -58,7 +59,9 @@ class LoginView: UIView {
         userNameTextField.translatesAutoresizingMaskIntoConstraints = false
         userNameTextField.placeholder = "Phone number, username, or email"
         userNameTextField.borderStyle = .roundedRect
+        userNameTextField.clearButtonMode = .whileEditing
         userNameTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: [.valueChanged, .allEditingEvents])
+        
         
         
         passwordTextField = UITextField()
@@ -66,6 +69,7 @@ class LoginView: UIView {
         passwordTextField.placeholder = "Password"
         passwordTextField.borderStyle = .roundedRect
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.clearButtonMode = .whileEditing
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: [.valueChanged, .allEditingEvents])
         
         logInButton = UIButton(type: .system)
@@ -77,6 +81,12 @@ class LoginView: UIView {
         logInButton.layer.cornerRadius = 5
         logInButton.alpha = 0.3
         logInButton.isEnabled = false
+        
+        logInActivityIndicator = UIActivityIndicatorView()
+        logInActivityIndicator.style = .medium
+        logInActivityIndicator.color = .white
+        logInButton.addSubview(logInActivityIndicator)
+        logInActivityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
         seperatorViewOne = UIView()
         seperatorViewOne.translatesAutoresizingMaskIntoConstraints = false
@@ -117,6 +127,8 @@ class LoginView: UIView {
         userDetailsStackView.addArrangedSubview(seperatorStackView)
         topContainer.addSubview(userDetailsStackView)
         
+        
+        loginWithFacebookButton = UIButton()
         
         loginWithFacebookButton = UIButton(type: .system)
         topContainer.addSubview(loginWithFacebookButton)
@@ -211,6 +223,10 @@ class LoginView: UIView {
             passwordTextField.widthAnchor.constraint(equalTo: userDetailsStackView.widthAnchor, multiplier: 0.8),
             logInButton.widthAnchor.constraint(equalTo: userDetailsStackView.widthAnchor, multiplier: 0.8),
             
+            logInActivityIndicator.centerXAnchor.constraint(equalTo: logInButton.centerXAnchor),
+            logInActivityIndicator.centerYAnchor.constraint(equalTo: logInButton.centerYAnchor),
+            
+            
             seperatorStackView.widthAnchor.constraint(equalTo: userDetailsStackView.widthAnchor, multiplier: 0.8),
             seperatorViewOne.heightAnchor.constraint(equalToConstant: 2),
             seperatorViewOne.widthAnchor.constraint(equalTo: seperatorStackView.widthAnchor, multiplier: 0.4),
@@ -237,6 +253,8 @@ class LoginView: UIView {
             forgotPasswordButton.centerXAnchor.constraint(equalTo: topContainer.centerXAnchor)
             
         ])
+        
+        
     }
     
     fileprivate func layoutConstraintsBottomContainerElements() {

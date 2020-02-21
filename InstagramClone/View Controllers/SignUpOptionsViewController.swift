@@ -48,12 +48,16 @@ class SignUpOptionsViewController: UIViewController {
     
     @objc func nextButtonClicked(sender: UIButton) {
         
+        
+        
+        
         if sender.superview is EmailOptionView {
             
             let emailId = signUpOptionsView.emailOptionView.emailTextField.text!
             
             if isValidEmail(emailId) {
                 
+                signUpOptionsView.emailOptionView.nextButtonActivityIndicator.startSpinning()
                 signUpOptionsView.emailOptionView.invalidEmailIdLabel.isHidden = true
                 let emailSignUpPasswordVC = EmailSignUpPasswordViewController()
                 emailSignUpPasswordVC.emailId = emailId
@@ -64,14 +68,13 @@ class SignUpOptionsViewController: UIViewController {
                     } else {
                         self.present(emailSignUpPasswordVC, animated: true, completion: nil)
                     }
+                    self.signUpOptionsView.emailOptionView.nextButtonActivityIndicator.stopSpinning(buttonTitle: "Next")
                 }
-                
-                
-                
                 
             } else {
                 signUpOptionsView.emailOptionView.invalidEmailIdLabel.isHidden = false
             }
+            
             
         }
        

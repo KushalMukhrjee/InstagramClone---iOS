@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class SignUpViewController: UIViewController {
     
@@ -23,6 +24,8 @@ class SignUpViewController: UIViewController {
         signUpView.translatesAutoresizingMaskIntoConstraints = false
         
         signUpView.pinToEdges(of: self.view, toSafeArea: true)
+        
+        signUpView.loginWithFacebookButton.addTarget(self, action: #selector(facebookLogin(sender:)), for: .touchUpInside)
         
         signUpView.logInButton.addTarget(self, action: #selector(logInButtonClicked(sender:)), for: .touchUpInside)
         signUpView.signupWithEmailOrPhoneNumberButton.addTarget(self, action: #selector(signUpWithPhoneOrEmailButtonClicked(sender:)), for: .touchUpInside)
@@ -42,6 +45,32 @@ class SignUpViewController: UIViewController {
         
         let signUpOptionsVC = SignUpOptionsViewController()
         present(signUpOptionsVC, animated: true, completion: nil)
+        
+    }
+    
+    @objc func facebookLogin(sender: UIButton) {
+        
+        let fbLoginManager = LoginManager()
+        
+        fbLoginManager.logIn(permissions: [], from: self) { (loginResult, err) in
+            if err != nil {
+                print(err?.localizedDescription as Any)
+            } else {
+                guard let loginResult = loginResult else {return}
+                
+                if !loginResult.isCancelled {
+                    loginWithFacebook(withAccessToken: AccessToken.current!.tokenString) { (authDataResult, err) -> (Void) in
+                        if err != nil {
+                            
+                        } else {
+                            let vc = ViewController()
+                           vc.modalPresentationStyle = .fullScreen
+                           self.present(vc, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
+        }
         
     }
 }

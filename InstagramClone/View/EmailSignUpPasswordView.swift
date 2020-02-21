@@ -14,6 +14,7 @@ class EmailSignUpPasswordView: UIView {
     var passwordTextField: UITextField!
     var confirmPasswordTextField: UITextField!
     var nextButton: UIButton!
+    var nextButtonActivityIndicator: UIActivityIndicatorView!
     var passwordMismatchLabel: UILabel!
     
     override init(frame: CGRect) {
@@ -31,6 +32,7 @@ class EmailSignUpPasswordView: UIView {
         passwordTextField.placeholder = "Enter password"
         self.addSubview(passwordTextField)
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.clearButtonMode = .whileEditing
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: [.editingChanged, .editingDidBegin])
         passwordTextField.becomeFirstResponder()
         
@@ -40,6 +42,7 @@ class EmailSignUpPasswordView: UIView {
         confirmPasswordTextField.placeholder = "Re-enter password"
         self.addSubview(confirmPasswordTextField)
         confirmPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
+        confirmPasswordTextField.clearButtonMode = .whileEditing
         confirmPasswordTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: [.editingChanged, .editingDidBegin])
         
         nextButton = UIButton(type: .system)
@@ -51,6 +54,11 @@ class EmailSignUpPasswordView: UIView {
         nextButton.layer.cornerRadius = 5
         nextButton.translatesAutoresizingMaskIntoConstraints = false
         
+        nextButtonActivityIndicator = UIActivityIndicatorView()
+        nextButtonActivityIndicator.style = .medium
+        nextButtonActivityIndicator.color = .white
+        nextButton.addSubview(nextButtonActivityIndicator)
+        nextButtonActivityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
         passwordMismatchLabel = UILabel()
         passwordMismatchLabel.text = "Passwords do not match"
@@ -94,10 +102,14 @@ class EmailSignUpPasswordView: UIView {
             nextButton.topAnchor.constraint(equalTo: passwordMismatchLabel.bottomAnchor, constant: 8),
             nextButton.leadingAnchor.constraint(equalTo: confirmPasswordTextField.leadingAnchor),
             nextButton.trailingAnchor.constraint(equalTo: confirmPasswordTextField.trailingAnchor),
-            nextButton.heightAnchor.constraint(equalTo: confirmPasswordTextField.heightAnchor)
+            nextButton.heightAnchor.constraint(equalTo: confirmPasswordTextField.heightAnchor),
+            
+            nextButtonActivityIndicator.centerXAnchor.constraint(equalTo: nextButton.centerXAnchor),
+            nextButtonActivityIndicator.centerYAnchor.constraint(equalTo: nextButton.centerYAnchor)
         
         
         ])
+
         
         
     }

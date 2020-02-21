@@ -37,16 +37,32 @@ class EmailSignUpPasswordViewController: UIViewController {
     
     @objc func createUser() {
         
+        emailSignUpPasswordView.nextButtonActivityIndicator.startSpinning()
         guard let emailId = emailId else {return}
         Auth.auth().createUser(withEmail: emailId, password: emailSignUpPasswordView.passwordTextField.text!) { (result, err) in
             if err != nil {
-                print("FIR ERR:\(err?.localizedDescription)")
+                
+                if let err = err as NSError? {
+                    
+                    switch err.code {
+                    case AuthErrorCode.weakPassword.rawValue:
+                        
+                        showModalAlert(on: self, title: "Invalid password", message: "Password must be atleast 6 characters or more.", buttonTitlesWithAction: [:], completion: nil)
+                        
+                    default:
+                        print(err.localizedDescription)
+                    }
+                    
+                    
+                    
+                }
+                
+                
+            } else {
+                self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
             }
             
-            print(result?.user.email)
-            self.dismiss(animated: true) {
-                self.parent?.dismiss(animated: true, completion: nil)
-            }
+            self.emailSignUpPasswordView.nextButtonActivityIndicator.stopSpinning(buttonTitle: "Next")
             
         }
         

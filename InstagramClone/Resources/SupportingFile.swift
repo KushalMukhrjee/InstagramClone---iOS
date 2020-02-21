@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
+import FBSDKCoreKit
 
 func isValidEmail(_ email: String) -> Bool {
     let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
@@ -50,6 +51,15 @@ func doesEmailIdAlreadyExist(emailId: String, completion: @escaping (Bool, Error
         }
     }
 
+func loginWithFacebook(withAccessToken accessToken: String, completion: @escaping (AuthDataResult?, Error?) -> (Void)) {
+    
+    let credential = FacebookAuthProvider.credential(withAccessToken: accessToken)
+    Auth.auth().signIn(with: credential) { (authDataResult, err) in
+        completion(authDataResult,err)
+    }
+    
+}
+
 
 
 
@@ -72,3 +82,35 @@ func showModalAlert(on vc: UIViewController, title: String, message: String, but
 }
 
 
+extension UIActivityIndicatorView {
+
+    func startSpinning() {
+        
+        guard let superView = self.superview else {return}
+        
+        if superview is UIButton {
+            let button = superView as! UIButton
+            button.setTitle("", for: .normal)
+
+        }
+        
+        self.startAnimating()
+        
+    }
+    
+    func stopSpinning(buttonTitle: String) {
+        
+        guard let superView = self.superview else {return}
+               
+               if superview is UIButton {
+                   
+                   let button = superView as! UIButton
+                   button.setTitle(buttonTitle, for: .normal)
+
+               }
+               
+        self.stopAnimating()
+        
+    }
+    
+}

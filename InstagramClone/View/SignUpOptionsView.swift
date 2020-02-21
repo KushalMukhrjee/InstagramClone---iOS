@@ -226,6 +226,7 @@ class PhoneOptionView: UIView {
        
         phoneTextField.leftView = countryCodeView
         phoneTextField.leftViewMode = .always
+        phoneTextField.clearButtonMode = .whileEditing
         
         phoneTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: [.editingChanged, .editingDidBegin])
         
@@ -286,6 +287,7 @@ class EmailOptionView: UIView {
     
     var emailTextField: UITextField!
     var nextButton: UIButton!
+    var nextButtonActivityIndicator: UIActivityIndicatorView!
     var invalidEmailIdLabel: UILabel!
     
     override init(frame: CGRect) {
@@ -297,6 +299,7 @@ class EmailOptionView: UIView {
         emailTextField.borderStyle = .roundedRect
         emailTextField.placeholder = "Email"
         emailTextField.keyboardType = .emailAddress
+        emailTextField.clearButtonMode = .whileEditing
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: [.editingChanged, .editingDidBegin])
         
         nextButton = UIButton(type: .system)
@@ -307,6 +310,12 @@ class EmailOptionView: UIView {
         nextButton.titleLabel?.font = .boldSystemFont(ofSize: 20)
         nextButton.layer.cornerRadius = 5
         nextButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        nextButtonActivityIndicator = UIActivityIndicatorView()
+        nextButtonActivityIndicator.style = .medium
+        nextButtonActivityIndicator.color = .white
+        nextButton.addSubview(nextButtonActivityIndicator)
+        nextButtonActivityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
         invalidEmailIdLabel = UILabel()
         invalidEmailIdLabel.text = "Please enter a valid email address"
@@ -339,14 +348,17 @@ class EmailOptionView: UIView {
            invalidEmailIdLabel.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
            invalidEmailIdLabel.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
            
-           
-           
            nextButton.topAnchor.constraint(equalTo: invalidEmailIdLabel.bottomAnchor, constant: 5),
            nextButton.leadingAnchor.constraint(equalTo: emailTextField.leadingAnchor),
            nextButton.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
-           nextButton.heightAnchor.constraint(equalTo: emailTextField.heightAnchor)
+           nextButton.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
+           
+           nextButtonActivityIndicator.centerXAnchor.constraint(equalTo: nextButton.centerXAnchor),
+           nextButtonActivityIndicator.centerYAnchor.constraint(equalTo: nextButton.centerYAnchor)
        
        ])
+        
+        print("kakskas:",nextButtonActivityIndicator.frame.width)
     }
     
     @objc func textFieldDidChange(sender: UITextField) {
