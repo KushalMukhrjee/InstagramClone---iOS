@@ -11,6 +11,10 @@
 		2F9C611423FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C611323FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift */; };
 		2F9C611623FE78B200ABFA70 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C611523FE78B200ABFA70 /* UserModel.swift */; };
 		2F9C611823FE87EA00ABFA70 /* SupportingFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C611723FE87EA00ABFA70 /* SupportingFile.swift */; };
+		2FFBD47124053F100012985B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBD47024053F100012985B /* SplashViewController.swift */; };
+		2FFBD4C32410D3A90012985B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBD4C22410D3A90012985B /* MainTabBarController.swift */; };
+		2FFBD4C62410D7FA0012985B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBD4C52410D7FA0012985B /* SearchViewController.swift */; };
+		2FFBD4C82410F5D60012985B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBD4C72410F5D60012985B /* Constants.swift */; };
 		550A07F323DED0FF00957FD9 /* FeedItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550A07F223DED0FF00957FD9 /* FeedItemModel.swift */; };
 		5565310D23E2CF0000E97E0D /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5565310C23E2CD3300E97E0D /* Billabong.ttf */; };
 		5565310E23E2CF3200E97E0D /* Billabong.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 5565310C23E2CD3300E97E0D /* Billabong.ttf */; };
@@ -23,7 +27,7 @@
 		55883E3F23E150AF00778CEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55883E3E23E150AF00778CEC /* GoogleService-Info.plist */; };
 		55A2181623DAFE7800588D8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2181523DAFE7800588D8F /* AppDelegate.swift */; };
 		55A2181823DAFE7800588D8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2181723DAFE7800588D8F /* SceneDelegate.swift */; };
-		55A2181A23DAFE7800588D8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2181923DAFE7800588D8F /* ViewController.swift */; };
+		55A2181A23DAFE7800588D8F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2181923DAFE7800588D8F /* FeedViewController.swift */; };
 		55A2181D23DAFE7800588D8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A2181B23DAFE7800588D8F /* Main.storyboard */; };
 		55A2181F23DAFE7900588D8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A2181E23DAFE7900588D8F /* Assets.xcassets */; };
 		55A2182223DAFE7900588D8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55A2182023DAFE7900588D8F /* LaunchScreen.storyboard */; };
@@ -41,6 +45,10 @@
 		2F9C611323FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpPasswordViewController.swift; sourceTree = "<group>"; };
 		2F9C611523FE78B200ABFA70 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		2F9C611723FE87EA00ABFA70 /* SupportingFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingFile.swift; sourceTree = "<group>"; };
+		2FFBD47024053F100012985B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		2FFBD4C22410D3A90012985B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		2FFBD4C52410D7FA0012985B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2FFBD4C72410F5D60012985B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		550A07F223DED0FF00957FD9 /* FeedItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemModel.swift; sourceTree = "<group>"; };
 		5565310C23E2CD3300E97E0D /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
 		5568A8EC23E2AAC500016465 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +61,7 @@
 		55A2181223DAFE7800588D8F /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A2181523DAFE7800588D8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55A2181723DAFE7800588D8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		55A2181923DAFE7800588D8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		55A2181923DAFE7800588D8F /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		55A2181C23DAFE7800588D8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55A2181E23DAFE7900588D8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55A2182123DAFE7900588D8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,12 +87,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FFBD4C42410D6390012985B /* LogInAndSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				5568A8EC23E2AAC500016465 /* LoginViewController.swift */,
+				55D6A51E23E9827D006C66AC /* SignUpViewController.swift */,
+				55D6A52223EA96A3006C66AC /* SignUpOptionsViewController.swift */,
+				2F9C611323FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift */,
+			);
+			path = LogInAndSignUp;
+			sourceTree = "<group>";
+		};
+		2FFBD4C924110A8B0012985B /* LogInAndSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				5568A8EE23E2AAE500016465 /* LoginView.swift */,
+				55D6A51C23E97E33006C66AC /* SignUpView.swift */,
+				55D6A52023EA965E006C66AC /* SignUpOptionsView.swift */,
+				557BEA1623F144A4009DF611 /* CountryCodeView.swift */,
+				2F9C611123FD2FAB00ABFA70 /* EmailSignUpPasswordView.swift */,
+			);
+			path = LogInAndSignUp;
+			sourceTree = "<group>";
+		};
 		5565310B23E2CD2700E97E0D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				557BEA1423F143CE009DF611 /* countryCodes.json */,
 				5565310C23E2CD3300E97E0D /* Billabong.ttf */,
 				2F9C611723FE87EA00ABFA70 /* SupportingFile.swift */,
+				2FFBD4C72410F5D60012985B /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -92,11 +124,11 @@
 		5568A8EB23E2AA9400016465 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				55A2181923DAFE7800588D8F /* ViewController.swift */,
-				5568A8EC23E2AAC500016465 /* LoginViewController.swift */,
-				55D6A51E23E9827D006C66AC /* SignUpViewController.swift */,
-				55D6A52223EA96A3006C66AC /* SignUpOptionsViewController.swift */,
-				2F9C611323FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift */,
+				2FFBD47024053F100012985B /* SplashViewController.swift */,
+				2FFBD4C22410D3A90012985B /* MainTabBarController.swift */,
+				55A2181923DAFE7800588D8F /* FeedViewController.swift */,
+				2FFBD4C52410D7FA0012985B /* SearchViewController.swift */,
+				2FFBD4C42410D6390012985B /* LogInAndSignUp */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -160,11 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				55A2182A23DB004700588D8F /* FeedItemView.swift */,
-				5568A8EE23E2AAE500016465 /* LoginView.swift */,
-				55D6A51C23E97E33006C66AC /* SignUpView.swift */,
-				55D6A52023EA965E006C66AC /* SignUpOptionsView.swift */,
-				557BEA1623F144A4009DF611 /* CountryCodeView.swift */,
-				2F9C611123FD2FAB00ABFA70 /* EmailSignUpPasswordView.swift */,
+				2FFBD4C924110A8B0012985B /* LogInAndSignUp */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -310,19 +338,23 @@
 				5568A8EF23E2AAE500016465 /* LoginView.swift in Sources */,
 				2F9C611223FD2FAB00ABFA70 /* EmailSignUpPasswordView.swift in Sources */,
 				557BEA1A23F14E61009DF611 /* CountryCodeViewModel.swift in Sources */,
+				2FFBD4C82410F5D60012985B /* Constants.swift in Sources */,
 				2F9C611823FE87EA00ABFA70 /* SupportingFile.swift in Sources */,
 				2F9C611423FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift in Sources */,
 				557BEA1723F144A4009DF611 /* CountryCodeView.swift in Sources */,
 				557BEA1C23F14E7F009DF611 /* CountryCodeModel.swift in Sources */,
-				55A2181A23DAFE7800588D8F /* ViewController.swift in Sources */,
+				55A2181A23DAFE7800588D8F /* FeedViewController.swift in Sources */,
 				55D6A51F23E9827D006C66AC /* SignUpViewController.swift in Sources */,
+				2FFBD4C62410D7FA0012985B /* SearchViewController.swift in Sources */,
 				550A07F323DED0FF00957FD9 /* FeedItemModel.swift in Sources */,
 				55D6A52323EA96A3006C66AC /* SignUpOptionsViewController.swift in Sources */,
 				55A2181623DAFE7800588D8F /* AppDelegate.swift in Sources */,
 				55A2181823DAFE7800588D8F /* SceneDelegate.swift in Sources */,
 				55D6A51D23E97E33006C66AC /* SignUpView.swift in Sources */,
+				2FFBD4C32410D3A90012985B /* MainTabBarController.swift in Sources */,
 				2F9C611623FE78B200ABFA70 /* UserModel.swift in Sources */,
 				55A2182B23DB004700588D8F /* FeedItemView.swift in Sources */,
+				2FFBD47124053F100012985B /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

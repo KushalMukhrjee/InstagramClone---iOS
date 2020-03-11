@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .systemBackground
+        
         loginView = LoginView()
         self.view.addSubview(loginView)
         loginView.translatesAutoresizingMaskIntoConstraints = false
@@ -66,9 +68,7 @@ class LoginViewController: UIViewController {
                 
             } else {
                 
-                let vc = ViewController()
-                vc.modalPresentationStyle = .fullScreen
-                self?.present(vc, animated: true, completion: nil)
+                showMainTabBarController(on: self!, animated: false, modalPresentationStyle: .fullScreen)
             }
             self!.loginView.logInActivityIndicator.stopSpinning(buttonTitle: "Log in")
             
@@ -105,10 +105,7 @@ class LoginViewController: UIViewController {
                             print(err?.localizedDescription as Any)
                         } else {
                             
-                            let vc = ViewController()
-                            vc.modalPresentationStyle = .fullScreen
-                            self.present(vc, animated: true, completion: nil)
-                            
+                           showMainTabBarController(on: self, animated: false, modalPresentationStyle: .fullScreen)
                         }
                     }
                 }

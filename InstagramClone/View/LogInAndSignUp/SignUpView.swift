@@ -28,6 +28,7 @@ class SignUpView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+    
         
         setupTopContainer()
         setupBottomContainer()
@@ -104,7 +105,7 @@ class SignUpView: UIView {
         instagramLabel = UILabel()
         topContainer.addSubview(instagramLabel)
         instagramLabel.translatesAutoresizingMaskIntoConstraints = false
-        instagramLabel.font = UIFont(name: "Billabong", size: 60)
+        instagramLabel.font = UIFont(name: Constants.instagramFontName, size: 60)
         instagramLabel.text = "Instagram"
         
         loginWithFacebookButton = UIButton(type: .system)

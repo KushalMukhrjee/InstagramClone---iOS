@@ -63,9 +63,9 @@ class SignUpViewController: UIViewController {
                         if err != nil {
                             
                         } else {
-                            let vc = ViewController()
-                           vc.modalPresentationStyle = .fullScreen
-                           self.present(vc, animated: true, completion: nil)
+                           let feedVC = FeedViewController()
+                            presentViewController(feedVC, on: self, animated: true, withNavigationController: true, modalPresentationStyle: .fullScreen)
+                           
                         }
                     }
                 }

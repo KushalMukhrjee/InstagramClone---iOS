@@ -17,6 +17,8 @@ class SignUpOptionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         signUpOptionsView = SignUpOptionsView()
         self.view.addSubview(signUpOptionsView)
         signUpOptionsView.backgroundColor = .systemBackground
@@ -73,6 +75,7 @@ class SignUpOptionsViewController: UIViewController {
                 
             } else {
                 signUpOptionsView.emailOptionView.invalidEmailIdLabel.isHidden = false
+                
             }
             
             

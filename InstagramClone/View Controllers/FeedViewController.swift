@@ -9,15 +9,35 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class FeedViewController: UIViewController {
     
+    var loggedInUserId: String?
     var feedItemsCollectionView: UICollectionView!
     
+    var logoutButton: UIBarButtonItem!
+    
     var feedItems = Array(repeating: FeedItemModel(), count: 10)
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        self.navigationItem.title = "Instagram"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Constants.instagramFontName, size: 40) as Any]
+        
+        
+        let directBarButtonItem = UIBarButtonItem(image: UIImage(named: Constants.directImageName), style: .plain, target: self, action: nil)
+        let cameraBarButtonItem = UIBarButtonItem(image: UIImage(named: Constants.cameraImageName), style: .done, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = directBarButtonItem
+        self.navigationItem.leftBarButtonItem = cameraBarButtonItem
+        
+        
         //Firebase tryout
+        
+        
+        loggedInUserId = Auth.auth().currentUser?.email
+        UserDefaults.standard.set(loggedInUserId, forKey: Constants.lastUserId)
         
         
         let dbRef = Database.database().reference()
@@ -52,11 +72,19 @@ class ViewController: UIViewController {
         feedItemsCollectionView.delegate = self
                 
     }
+    
+//
+//    @objc func logout() {
+//
+//        UserDefaults.standard.set(nil, forKey: "lastUserId")
+//        dismiss(animated: true)
+//
+//    }
 
 
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension FeedViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return feedItems.count

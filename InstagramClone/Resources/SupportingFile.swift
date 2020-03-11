@@ -114,3 +114,35 @@ extension UIActivityIndicatorView {
     }
     
 }
+
+ 
+func presentViewController(_ viewController: UIViewController,on parentVC: UIViewController, animated: Bool, withNavigationController: Bool, modalPresentationStyle: UIModalPresentationStyle = .automatic, completion: (() -> Void)? = nil) {
+    
+    if withNavigationController {
+        
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.modalPresentationStyle = modalPresentationStyle
+        parentVC.present(navigationController, animated: animated, completion: completion)
+        
+        
+    } else {
+        
+        viewController.modalPresentationStyle = modalPresentationStyle
+        parentVC.present(viewController, animated: animated, completion: completion)
+        
+    }
+    
+    
+}
+
+ 
+func showMainTabBarController(on parentVC: UIViewController, animated: Bool, modalPresentationStyle: UIModalPresentationStyle = .automatic, completion: (() -> Void)? = nil) {
+    
+    let mainTabBarVC = MainTabBarController()
+    mainTabBarVC.modalPresentationStyle = modalPresentationStyle
+    parentVC.present(mainTabBarVC, animated: animated, completion: completion)
+    
+    
+    
+}
+

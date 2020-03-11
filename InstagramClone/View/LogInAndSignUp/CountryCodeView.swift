@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+let countryCodeCellReuseIdentifier = "countrycodecell"
+
 class CountryCodeView: UIView {
     
  
@@ -26,7 +29,7 @@ class CountryCodeView: UIView {
         self.addSubview(viewHeaderLabel)
         
         countryCodesTableView = UITableView()
-        countryCodesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "countrycodecell")
+        countryCodesTableView.register(UITableViewCell.self, forCellReuseIdentifier: countryCodeCellReuseIdentifier)
         countryCodesTableView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(countryCodesTableView)
    }

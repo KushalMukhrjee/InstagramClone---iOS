@@ -12,6 +12,8 @@ import UIKit
 
 class SignUpOptionsView: UIView {
     
+    var scrollView: UIScrollView!
+    
     var userImageView: UIImageView!
     var emailOptionSelectorView: UIView!
     var phoneOptionSelectorView: UIView!
@@ -27,10 +29,15 @@ class SignUpOptionsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+//        scrollView = UIScrollView()
+//        self.addSubview(scrollView)
+//        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
         userImageView = UIImageView()
         self.addSubview(userImageView)
         userImageView.translatesAutoresizingMaskIntoConstraints = false
-        userImageView.image = UIImage(named: "userImage")
+        userImageView.image = UIImage(named: Constants.genericUserImageName)
         
         let emailTapGesture = UITapGestureRecognizer()
         let phoneTapGesture = UITapGestureRecognizer()
@@ -129,6 +136,16 @@ class SignUpOptionsView: UIView {
         super.updateConstraints()
         
         
+//        NSLayoutConstraint.activate([
+//        
+//            scrollView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 8.0),
+//            scrollView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8.0),
+//            scrollView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -8.0),
+//            scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8.0)
+//        
+//        ])
+//        
+        
         NSLayoutConstraint.activate([
         
             userImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -149,7 +166,7 @@ class SignUpOptionsView: UIView {
             optionsView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             optionsView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
             optionsView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8)
-        
+                    
         
         ])
         
@@ -290,6 +307,7 @@ class EmailOptionView: UIView {
     var nextButtonActivityIndicator: UIActivityIndicatorView!
     var invalidEmailIdLabel: UILabel!
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -353,12 +371,13 @@ class EmailOptionView: UIView {
            nextButton.trailingAnchor.constraint(equalTo: emailTextField.trailingAnchor),
            nextButton.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
            
+           
            nextButtonActivityIndicator.centerXAnchor.constraint(equalTo: nextButton.centerXAnchor),
            nextButtonActivityIndicator.centerYAnchor.constraint(equalTo: nextButton.centerYAnchor)
        
        ])
         
-        print("kakskas:",nextButtonActivityIndicator.frame.width)
+        
     }
     
     @objc func textFieldDidChange(sender: UITextField) {
@@ -375,12 +394,7 @@ class EmailOptionView: UIView {
         
     }
     
-    
-   
-    
-    
 }
 
 
-
-
+    

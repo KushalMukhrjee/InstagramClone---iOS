@@ -52,7 +52,7 @@ class LoginView: UIView {
         instagramLabel = UILabel()
         topContainer.addSubview(instagramLabel)
         instagramLabel.translatesAutoresizingMaskIntoConstraints = false
-        instagramLabel.font = UIFont(name: "Billabong", size: 60)
+        instagramLabel.font = UIFont(name: Constants.instagramFontName, size: 60)
         instagramLabel.text = "Instagram"
         
         userNameTextField = UITextField()
@@ -140,7 +140,7 @@ class LoginView: UIView {
         facebookLogoImageView = UIImageView()
         topContainer.addSubview(facebookLogoImageView)
         facebookLogoImageView.translatesAutoresizingMaskIntoConstraints = false
-        facebookLogoImageView.image = UIImage(named: "facebookLogo")
+        facebookLogoImageView.image = UIImage(named: Constants.facebookImageName)
         
         forgotPasswordButton = UIButton(type: .system)
         topContainer.addSubview(forgotPasswordButton)
