@@ -9,13 +9,29 @@
 import UIKit
 
 
+enum MediaTypes: Int {
+    
+    case image, story, video
+    
+}
 
-var categories = ["IGTV", "Shop", "TV & Movies", "Travel", "Style", "Gaming", "Auto", "Food", "Science & Tech", "Nature", "Comics", "Animals", "Music", "Sports"]
 
-class SearchViewController: UIViewController {
+var media = [MediaTypes]()
+
+func randomlyStoreMedia() {
+    
+    for _ in 0...100 {
+        let number = Int.random(in: 0...2)
+        media.append(MediaTypes(rawValue: number)!)
+    }
+    
+}
+
+
+class ExploreViewController: UIViewController {
     
     
-//    var searchController: UISearchController!
+    var exploreView: ExploreView!
     
     
     
@@ -32,7 +48,7 @@ class SearchViewController: UIViewController {
         collectionView.backgroundColor = .systemBackground
         collectionView.showsHorizontalScrollIndicator = false
         
-        collectionView.register(CategoriesCollectionViewCell.self, forCellWithReuseIdentifier: "reuse")
+        collectionView.register(SearchCategoriesCollectionViewCell.self, forCellWithReuseIdentifier: Constants.searchCategoriesCollectionViewReuseIdentifier)
         
         return collectionView
         
@@ -44,6 +60,9 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        randomlyStoreMedia()
+        
         
         self.view.backgroundColor = .systemBackground
         
@@ -80,6 +99,13 @@ class SearchViewController: UIViewController {
         
         
         
+        exploreView = ExploreView()
+        self.view.addSubview(exploreView)
+        exploreView.translatesAutoresizingMaskIntoConstraints = false
+        
+        exploreView.pinToEdges(of: self.view, toSafeArea: true)
+        exploreView.collectionView.dataSource = self
+        exploreView.collectionView.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -89,23 +115,64 @@ class SearchViewController: UIViewController {
     
 }
 
-extension SearchViewController: UISearchResultsUpdating, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ExploreViewController: UISearchResultsUpdating, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        if collectionView == searchCategoriesCollectionView {
+            return Constants.exploreCategories.count
+        } else if collectionView == exploreView.collectionView {
+            return media.count
+        }
+        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = searchCategoriesCollectionView.dequeueReusableCell(withReuseIdentifier: "reuse", for: indexPath) as! CategoriesCollectionViewCell
-        cell.categoryTitleLabel.text = categories[indexPath.row]
-//        cell.updateConstraints()
-        return cell
+        if collectionView == searchCategoriesCollectionView {
+            
+            let cell = searchCategoriesCollectionView.dequeueReusableCell(withReuseIdentifier: Constants.searchCategoriesCollectionViewReuseIdentifier, for: indexPath) as! SearchCategoriesCollectionViewCell
+            cell.categoryTitleLabel.text = Constants.exploreCategories[indexPath.row]
+            return cell
+            
+        } else if collectionView == exploreView.collectionView {
+            
+            let cell = exploreView.collectionView.dequeueReusableCell(withReuseIdentifier: Constants.exploreCollectionViewReuseIdentifier, for: indexPath) as! ExploreCollectionViewCell
+            cell.backgroundColor = .blue
+            return cell
+            
+        }
+        return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: 70, height: 30)
+        if collectionView == searchCategoriesCollectionView {
+            return CGSize(width: 70, height: 30)
+        } else if collectionView == exploreView.collectionView {
+            
+            let med = media[indexPath.row]
+            
+            var width = exploreView.collectionView.frame.width / 3 - 4 // based on edge insets and interitemspacing in explore view controller.
+            var height = CGFloat()
+            
+            if med == MediaTypes.image {
+                height = width
+            } else if med == MediaTypes.story {
+                height = 200
+            } else {
+                height = 100
+            }
+            
+            
+            
+            
+            
+            
+            
+            return CGSize(width: width, height: height)
+        }
+        
+        return CGSize()
         
     }
     
@@ -120,38 +187,3 @@ extension SearchViewController: UISearchResultsUpdating, UICollectionViewDataSou
 }
 
 
-class CategoriesCollectionViewCell: UICollectionViewCell {
-    
-    var categoryTitleLabel: UILabel!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        categoryTitleLabel = UILabel()
-        categoryTitleLabel.font = .boldSystemFont(ofSize: 16)
-        self.addSubview(categoryTitleLabel)
-        categoryTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.gray.cgColor
-        self.layer.cornerRadius = 5
-        
-        NSLayoutConstraint.activate([
-            
-            categoryTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-            categoryTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
-            categoryTitleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            categoryTitleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-            
-            
-        
-        ])
-        
-        
-      
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}

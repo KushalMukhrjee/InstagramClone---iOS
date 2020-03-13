@@ -36,7 +36,7 @@ class MainTabBarController: UITabBarController {
     func setupSearchViewController() {
         
         searchViewNavigationController = UINavigationController()
-        let searchViewController = SearchViewController()
+        let searchViewController = ExploreViewController()
         searchViewNavigationController.viewControllers = [searchViewController]
         searchViewNavigationController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: Constants.searchImageName), tag: 1)
         

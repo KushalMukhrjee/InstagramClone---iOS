@@ -23,6 +23,12 @@ class Constants {
     
     static let instagramFontName = "Billabong"
     
+    static let searchCategoriesCollectionViewReuseIdentifier = "searchCategoriesCollectionReuse"
+    static let exploreCollectionViewReuseIdentifier = "exploreCollectionReuse"
+    
+    static let exploreCategories = ["IGTV", "Shop", "TV & Movies", "Travel", "Style", "Gaming", "Auto", "Food", "Science & Tech", "Nature", "Comics", "Animals", "Music", "Sports"]
+
+    
     
     
     

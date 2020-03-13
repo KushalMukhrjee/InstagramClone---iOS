@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D81D631241A443500474E2D /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81D630241A443500474E2D /* ExploreView.swift */; };
+		1D81D633241A459E00474E2D /* SearchCategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81D632241A459E00474E2D /* SearchCategoriesCollectionViewCell.swift */; };
+		1D81D635241A463D00474E2D /* ExploreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D81D634241A463D00474E2D /* ExploreCollectionViewCell.swift */; };
 		2F9C611223FD2FAB00ABFA70 /* EmailSignUpPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C611123FD2FAB00ABFA70 /* EmailSignUpPasswordView.swift */; };
 		2F9C611423FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C611323FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift */; };
 		2F9C611623FE78B200ABFA70 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C611523FE78B200ABFA70 /* UserModel.swift */; };
 		2F9C611823FE87EA00ABFA70 /* SupportingFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9C611723FE87EA00ABFA70 /* SupportingFile.swift */; };
 		2FFBD47124053F100012985B /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBD47024053F100012985B /* SplashViewController.swift */; };
 		2FFBD4C32410D3A90012985B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBD4C22410D3A90012985B /* MainTabBarController.swift */; };
-		2FFBD4C62410D7FA0012985B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBD4C52410D7FA0012985B /* SearchViewController.swift */; };
+		2FFBD4C62410D7FA0012985B /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBD4C52410D7FA0012985B /* ExploreViewController.swift */; };
 		2FFBD4C82410F5D60012985B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFBD4C72410F5D60012985B /* Constants.swift */; };
 		550A07F323DED0FF00957FD9 /* FeedItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550A07F223DED0FF00957FD9 /* FeedItemModel.swift */; };
 		5565310D23E2CF0000E97E0D /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5565310C23E2CD3300E97E0D /* Billabong.ttf */; };
@@ -40,6 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D81D630241A443500474E2D /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		1D81D632241A459E00474E2D /* SearchCategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		1D81D634241A463D00474E2D /* ExploreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCollectionViewCell.swift; sourceTree = "<group>"; };
 		2AE90B37A9D452405454C45E /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 		2F9C611123FD2FAB00ABFA70 /* EmailSignUpPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpPasswordView.swift; sourceTree = "<group>"; };
 		2F9C611323FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpPasswordViewController.swift; sourceTree = "<group>"; };
@@ -47,7 +53,7 @@
 		2F9C611723FE87EA00ABFA70 /* SupportingFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingFile.swift; sourceTree = "<group>"; };
 		2FFBD47024053F100012985B /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		2FFBD4C22410D3A90012985B /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		2FFBD4C52410D7FA0012985B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2FFBD4C52410D7FA0012985B /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		2FFBD4C72410F5D60012985B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		550A07F223DED0FF00957FD9 /* FeedItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemModel.swift; sourceTree = "<group>"; };
 		5565310C23E2CD3300E97E0D /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
@@ -127,7 +133,7 @@
 				2FFBD47024053F100012985B /* SplashViewController.swift */,
 				2FFBD4C22410D3A90012985B /* MainTabBarController.swift */,
 				55A2181923DAFE7800588D8F /* FeedViewController.swift */,
-				2FFBD4C52410D7FA0012985B /* SearchViewController.swift */,
+				2FFBD4C52410D7FA0012985B /* ExploreViewController.swift */,
 				2FFBD4C42410D6390012985B /* LogInAndSignUp */,
 			);
 			path = "View Controllers";
@@ -193,6 +199,9 @@
 			children = (
 				55A2182A23DB004700588D8F /* FeedItemView.swift */,
 				2FFBD4C924110A8B0012985B /* LogInAndSignUp */,
+				1D81D630241A443500474E2D /* ExploreView.swift */,
+				1D81D632241A459E00474E2D /* SearchCategoriesCollectionViewCell.swift */,
+				1D81D634241A463D00474E2D /* ExploreCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,6 +345,7 @@
 				5568A8ED23E2AAC500016465 /* LoginViewController.swift in Sources */,
 				55D6A52123EA965E006C66AC /* SignUpOptionsView.swift in Sources */,
 				5568A8EF23E2AAE500016465 /* LoginView.swift in Sources */,
+				1D81D633241A459E00474E2D /* SearchCategoriesCollectionViewCell.swift in Sources */,
 				2F9C611223FD2FAB00ABFA70 /* EmailSignUpPasswordView.swift in Sources */,
 				557BEA1A23F14E61009DF611 /* CountryCodeViewModel.swift in Sources */,
 				2FFBD4C82410F5D60012985B /* Constants.swift in Sources */,
@@ -343,9 +353,10 @@
 				2F9C611423FD30D900ABFA70 /* EmailSignUpPasswordViewController.swift in Sources */,
 				557BEA1723F144A4009DF611 /* CountryCodeView.swift in Sources */,
 				557BEA1C23F14E7F009DF611 /* CountryCodeModel.swift in Sources */,
+				1D81D635241A463D00474E2D /* ExploreCollectionViewCell.swift in Sources */,
 				55A2181A23DAFE7800588D8F /* FeedViewController.swift in Sources */,
 				55D6A51F23E9827D006C66AC /* SignUpViewController.swift in Sources */,
-				2FFBD4C62410D7FA0012985B /* SearchViewController.swift in Sources */,
+				2FFBD4C62410D7FA0012985B /* ExploreViewController.swift in Sources */,
 				550A07F323DED0FF00957FD9 /* FeedItemModel.swift in Sources */,
 				55D6A52323EA96A3006C66AC /* SignUpOptionsViewController.swift in Sources */,
 				55A2181623DAFE7800588D8F /* AppDelegate.swift in Sources */,
@@ -354,6 +365,7 @@
 				2FFBD4C32410D3A90012985B /* MainTabBarController.swift in Sources */,
 				2F9C611623FE78B200ABFA70 /* UserModel.swift in Sources */,
 				55A2182B23DB004700588D8F /* FeedItemView.swift in Sources */,
+				1D81D631241A443500474E2D /* ExploreView.swift in Sources */,
 				2FFBD47124053F100012985B /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
